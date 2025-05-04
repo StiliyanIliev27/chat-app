@@ -78,7 +78,7 @@ const Sidebar = () => {
                 {onlineUsers.includes(user._id) ? "Online" : "Offline"}
               </div>
             </div>
-          </button>
+          </button> 
         ))}
 
         {filteredUsers.length === 0 && (
