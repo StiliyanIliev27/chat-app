@@ -11,8 +11,6 @@ const io = new Server(server, {
       "http://localhost:5173", 
       "https://chat-app-m154.onrender.com"
     ],
-    methods: ["GET", "POST"],
-    credentials: true
   }
 });
 
@@ -26,7 +24,7 @@ const userSocketMap = {}; // {userId: socketId}
 io.on("connection", (socket) => {
   console.log("A user connected", socket.id);
 
-  const userId = socket.handshake.query?.userId;
+  const userId = socket.handshake.query.userId;
   if (userId) {
     userSocketMap[userId] = socket.id;
   } else {
